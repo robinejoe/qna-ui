@@ -1,15 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import CategoryDropdown from './components/CategoryDropdown';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
+      <Header />
+      <CategoryDropdown />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <CategoryDropdown />
-        </p>
         <a
           className="App-link"
           href="https://reactjs.org"

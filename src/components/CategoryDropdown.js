@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from 'react'
 
 const CategoryDropdown = () => {
     const [categories, setCategories] = useState([])
@@ -14,9 +14,10 @@ const CategoryDropdown = () => {
 
     return (
         <label>
-            Category
+            Browse by Question Category:
             <select>
-                <option key='default' value=''>Categories</option>
+
+                <option key='default' value=''>Select Category</option>
                 
                 {categories.map((category) => (
                     <option key={category.name} value={category.name}>{category.name}</option>
