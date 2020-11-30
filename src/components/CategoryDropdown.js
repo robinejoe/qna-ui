@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
 const CategoryDropdown = () => {
-    const [categories, setCategories] = useState([])
+    const [categories, setCategories] = useState([]);
     
     useEffect(() => {
         const getCategories = async () => {
@@ -10,7 +10,7 @@ const CategoryDropdown = () => {
                 .then((data) => setCategories(data.map(category => category)))
         }
         getCategories()
-    }, [])
+    }, []);
 
     return (
         <label>
@@ -24,7 +24,7 @@ const CategoryDropdown = () => {
                 ))}
             </select>
         </label>
-    )
+    );
 };
 
 export default CategoryDropdown;
