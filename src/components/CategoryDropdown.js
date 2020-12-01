@@ -13,17 +13,12 @@ const CategoryDropdown = () => {
     }, []);
 
     return (
-        <label>
-            Browse by Question Category:
-            <select>
-
-                <option key='default' value=''>Select Category</option>
-                
-                {categories.map((category) => (
-                    <option key={category.name} value={category.name}>{category.name}</option>
-                ))}
-            </select>
-        </label>
+        <select name="category">
+            <option key='default' value=''>Select Category</option>
+            {categories.map((category) => (
+                <option key={category.name} value={category.name}>{category.name}</option>
+            ))}
+        </select>
     );
 };
 

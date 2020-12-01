@@ -3,6 +3,7 @@ import './App.css';
 import CategoryDropdown from './components/CategoryDropdown';
 import Header from './components/Header';
 import QuestionCards from './components/QuestionCards';
+import QuestionForm from './components/QuestionForm';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <CategoryDropdown />
       <QuestionCards />
+      <QuestionForm />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <a
