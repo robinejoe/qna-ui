@@ -1,20 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function QuestionCard(props) {   
     const question = props.question;
+    const [comments, setComments] = useState([]);
+    useEffect(()=> {
+        const url = 'http://localhost:3001/api/questions/' + question._id + '/comments'
+        const getComments = async () => {
+            fetch(url)
+                .then((response) => response.json())
+                .then((data) => setComments(data.map(c => c)))
+        }
+        getComments()
+    });
+    const [showAnswers, setShowAnswers] = useState(false);
+    const toggleAnswers = () => {
+        if (!showAnswers) {
+            setShowAnswers(true)
+        }
+        else {
+            setShowAnswers(false)
+        }
+    }
     return (
         <div>
             <h1>{question.title}</h1>
             <h3>{question.category.name}</h3>
             <p>{question.description}</p>
-            <h2>Answer:</h2>
-            <p>This is where the answer text will go...</p>
+            <button onClick={toggleAnswers}>Answers:</button>
+            <div style={{display: showAnswers ? 'block' : 'none'}}>
+
+                {comments.map(c => (
+                <div>
+                    <p>User: {c.user}</p>
+                    <p>{c.createdAt}</p>
+                    <p>Comment: {c.content}</p>
+                </div>
+                ))}
+            </div>
         </div>
     );
 }
 
 export default QuestionCard;
-
-
-
-//This should display a sample question, its category, and when clicked, should be collapseable with one answer/comment to the question becomining viewable, or several comments.
