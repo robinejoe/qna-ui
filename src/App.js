@@ -16,9 +16,11 @@ function App() {
     <div className="App">
       <Header />
       <CategoryDropdown onChange={onCategoryChange}/>
+      <div className="mainbody">
       <QuestionCards category={selectedCategory}/>
       <QuestionForm />
-      <header className="App-header">
+      </div>
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <a
           className="App-link"
@@ -28,7 +30,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }

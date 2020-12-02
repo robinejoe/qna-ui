@@ -6,8 +6,9 @@ function QuestionForm() {
         user: "Robin"
     });
     return (
-        <main>
-            <form>
+        <div className="formcontainer">
+            <h1>Post A Question</h1>
+            <form className="form">
             <input 
                 name="user"
                 placeholder="User"
@@ -23,7 +24,7 @@ function QuestionForm() {
             />
             <button>Submit</button>
             </form>
-        </main>
+        </div>
     )
 }
 

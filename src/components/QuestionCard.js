@@ -25,7 +25,7 @@ function QuestionCard(props) {
         }
     }
     return (
-        <div>
+        <div className="questioncard">
             <h1>{question.title}</h1>
             <h3>{question.category.name}</h3>
             <p>{question.description}</p>

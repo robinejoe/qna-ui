@@ -14,9 +14,8 @@ function QuestionCards(props) {
         getQuestions()
     }, [props.category]);
     return (
-        <div>
+        <div className="questioncards">
             <h1>Questions</h1>
-            <p>{props.category}</p>
             {questions.slice(0, questionLimit).map(q => (
                 <QuestionCard question={q}/>
             ))}

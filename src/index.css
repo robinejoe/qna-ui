@@ -11,3 +11,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.questioncards {
+  border: 3px solid red;
+  margin: 0 5rem;
+  padding: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+}
+
+.questioncard {
+  margin: 2rem;
+  padding: 2rem;
+  text-align: left;
+  flex-shrink: 3;
+  background-color: rgb(240, 240, 240);
+}
+
+.formcontainer {
+  border: 3px solid purple;
+  width: 40rem;
+}
+
+.form {
+  border: 3px solid blue;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.mainbody {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.form input, .form textarea, .form select {
+font-size: 1.5rem;
+}
+
+.form button {
+  font-size: 1.5rem;
+  width: 40%;
+  align-self: center;
+  
+}
