@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 
 function QuestionCard(props) {   
-    const question = props.question;
+    const [question, setQuestion] = useState(props.question)
     const [comments, setComments] = useState([]);
     useEffect(()=> {
-        const url = 'http://localhost:3001/api/questions/' + question._id + '/comments'
-        const getComments = async () => {
+        if(question !== props.question) {
+            setQuestion(props.question)
+        }
+        let url = 'http://localhost:3001/api/questions/' + props.question._id + '/comments'
+        let getComments = async () => {
             fetch(url)
                 .then((response) => response.json())
                 .then((data) => setComments(data.map(c => c)))
         }
         getComments()
-    });
+    }, [question, props.question]);
     const [showAnswers, setShowAnswers] = useState(false);
     const toggleAnswers = () => {
         if (!showAnswers) {
@@ -28,7 +31,6 @@ function QuestionCard(props) {
             <p>{question.description}</p>
             <button onClick={toggleAnswers}>Answers:</button>
             <div style={{display: showAnswers ? 'block' : 'none'}}>
-
                 {comments.map(c => (
                 <div>
                     <p>User: {c.user}</p>

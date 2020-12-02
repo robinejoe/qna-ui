@@ -4,13 +4,19 @@ import CategoryDropdown from './components/CategoryDropdown';
 import Header from './components/Header';
 import QuestionCards from './components/QuestionCards';
 import QuestionForm from './components/QuestionForm';
+import React, { useState } from 'react';
 
 function App() {
+  const [selectedCategory, setCategory] = useState('');
+  function onCategoryChange(event) {
+    const {value} = event.target;
+    setCategory(value);
+  }
   return (
     <div className="App">
       <Header />
-      <CategoryDropdown />
-      <QuestionCards />
+      <CategoryDropdown onChange={onCategoryChange}/>
+      <QuestionCards category={selectedCategory}/>
       <QuestionForm />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
