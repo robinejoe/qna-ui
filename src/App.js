@@ -15,7 +15,9 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <div className="selectdropdown">
       <CategoryDropdown onChange={onCategoryChange}/>
+      </div>
       <div className="mainbody">
       <QuestionCards category={selectedCategory}/>
       <QuestionForm />

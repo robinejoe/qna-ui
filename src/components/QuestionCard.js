@@ -27,15 +27,15 @@ function QuestionCard(props) {
     return (
         <div className="questioncard">
             <h1>{question.title}</h1>
-            <h3>{question.category.name}</h3>
+            <span>Posted by: <em>{question.user}</em> in </span>
+            <h3 className="categoryflair">{question.category.name}</h3>
             <p>{question.description}</p>
-            <button onClick={toggleAnswers}>Answers:</button>
+            <button className="answersbutton" onClick={toggleAnswers}>Answers:</button>
             <div style={{display: showAnswers ? 'block' : 'none'}}>
                 {comments.map(c => (
-                <div>
-                    <p>User: {c.user}</p>
-                    <p>{c.createdAt}</p>
-                    <p>Comment: {c.content}</p>
+                <div className="comment">
+                    <p>Reply by: {c.user} on {c.createdAt}</p>
+                    <p>{c.content}</p>
                 </div>
                 ))}
             </div>
