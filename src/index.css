@@ -13,45 +13,88 @@ code {
 }
 
 .questioncards {
-  border: 3px solid red;
-  margin: 0 5rem;
-  padding: 2rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
+  color:#190600;
+  width: 600px;
 }
 
 .questioncard {
-  margin: 2rem;
+  margin: 0 0 2rem 0;
   padding: 2rem;
   text-align: left;
-  flex-shrink: 3;
   background-color: rgb(240, 240, 240);
+  border-radius: 10px;
+}
+
+.questioncard h1 {
+  margin: 0 0 1rem 0;
 }
 
 .formcontainer {
-  border: 3px solid purple;
-  width: 40rem;
+  width: 450px;
+  margin: 0 1rem 0 1rem;
 }
 
 .form {
-  border: 3px solid blue;
   display: flex;
   flex-flow: column nowrap;
+  border-radius: 10px;
+  padding: 2rem;
+  background-color: #F2F5F3;
 }
 
 .mainbody {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: center;
 }
 
 .form input, .form textarea, .form select {
-font-size: 1.5rem;
+font-size: 1.1rem;
 }
 
 .form button {
   font-size: 1.5rem;
-  width: 40%;
   align-self: center;
+  padding: .3rem .8rem .3rem .8rem;
+  margin: .5rem;
+  border-radius: 10px;
   
+}
+
+.categoryflair {
+  border-radius: 10px;
+  background-color:#88B04B;
+  padding: .3rem .6rem;
+  color: white;
+  display: inline;
+  font-size: 1rem;
+}
+
+.answersbutton {
+  border-radius: 10px;
+}
+
+.selectdropdown {
+  margin: 2rem 0;
+}
+
+.selectdropdown select {
+  font-size: 1.3rem;
+}
+
+.navbar {
+  font-size: 3rem;
+  color: #075C61;
+  background-color: #D6D6CC;
+  padding: 3rem 0;
+}
+
+.comment {
+  background-color: white;
+  padding: .2rem 1rem;
+  border-radius: 10px;
+  margin: 1.5rem 0 0 0;
 }
