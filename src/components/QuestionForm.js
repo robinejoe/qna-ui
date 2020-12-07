@@ -1,27 +1,27 @@
 import CategoryDropdown from './CategoryDropdown';
+import { useHistory } from 'react-router-dom';
 
 function QuestionForm() {
-    function handleOnSubmit(event) {
+    let history = useHistory();
+    const handleOnSubmit = async (event) => {
+        event.preventDefault();
         const body = {
             user: event.target[0].value,
             category: event.target[1].value,
             title: event.target[2].value,
             description: event.target[3].value
         };
-        fetch('http://localhost:3001/api/questions', {
+        let response = await fetch('http://localhost:3001/api/questions', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body)
         })
         .then((response) => {
-            console.log("Status: " + response.status);
             if(response.ok) {
                 return response.json();
             }
-        })
-        .then(data => console.log('Success:', data))
-
-        event.preventDefault();
+        });
+        history.push('/question/' + response._id);
     }
     return (
         <div className="formcontainer">
