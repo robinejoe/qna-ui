@@ -1,39 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import CategoryDropdown from './components/CategoryDropdown';
-import Header from './components/Header';
-import QuestionCards from './components/QuestionCards';
-import QuestionForm from './components/QuestionForm';
-import React, { useState } from 'react';
+import HomePage from './components/HomePage';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
-  const [selectedCategory, setCategory] = useState('');
-  function onCategoryChange(event) {
-    const {value} = event.target;
-    setCategory(value);
-  }
   return (
-    <div className="App">
-      <Header />
-      <div className="selectdropdown">
-      <CategoryDropdown onChange={onCategoryChange}/>
-      </div>
-      <div className="mainbody">
-      <QuestionCards category={selectedCategory}/>
-      <QuestionForm />
-      </div>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-    </div>
+    <Router>
+    <Switch>
+      <Route path='/'><HomePage /></Route>
+    </Switch>
+    </Router>
   );
 }
 
