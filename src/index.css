@@ -32,6 +32,11 @@ code {
   margin: 0 0 1rem 0;
 }
 
+.questioncard a {
+  color: #156B39;
+  text-decoration: none;
+}
+
 .formcontainer {
   width: 450px;
   margin: 0 1rem 0 1rem;
@@ -90,6 +95,12 @@ font-size: 1.1rem;
   color: #075C61;
   background-color: #D6D6CC;
   padding: 3rem 0;
+  text-align: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #000A42;
 }
 
 .comment {
@@ -97,4 +108,9 @@ font-size: 1.1rem;
   padding: .2rem 1rem;
   border-radius: 10px;
   margin: 1.5rem 0 0 0;
+}
+
+.sectioncontainer {
+  display: flex;
+  justify-content: center;
 }

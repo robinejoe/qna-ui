@@ -17,7 +17,7 @@ function QuestionCards(props) {
         <div className="questioncards">
             <h1>Questions</h1>
             {questions.slice(0, questionLimit).map(q => (
-                <QuestionCard question={q}/>
+                <QuestionCard key={q._id} question={q}/>
             ))}
         </div>
     );
