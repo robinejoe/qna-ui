@@ -7,7 +7,7 @@ function QuestionDetails(props) {
         setQuestion(props.question);
     }, []);
     return (
-        <div>
+        <div className="card">
             {question &&
                 <div>
                 <h1>{question.title}</h1>

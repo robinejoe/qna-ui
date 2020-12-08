@@ -31,7 +31,7 @@ function QuestionCard(props) {
     return (
         <div>
         {question ?
-            <div className="questioncard">
+            <div className="card">
                 <Link to={'/question/'+question._id}><h1>{question.title}</h1></Link>
                 <h3 className="categoryflair">{question.category.name}</h3>
                 <p>Posted by: <em>{question.user}</em> on <Moment format="MM/DD/YYYY \a\t h:mm:ss a">{question.createdAt}</Moment></p>

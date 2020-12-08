@@ -20,19 +20,19 @@ code {
   width: 600px;
 }
 
-.questioncard {
+.card {
   margin: 0 0 2rem 0;
   padding: 2rem;
   text-align: left;
-  background-color: rgb(240, 240, 240);
+  background-color:#F0F0F0;
   border-radius: 10px;
 }
 
-.questioncard h1 {
+.card h1 {
   margin: 0 0 1rem 0;
 }
 
-.questioncard a {
+.card a {
   color: #156B39;
   text-decoration: none;
 }
@@ -66,7 +66,6 @@ font-size: 1.1rem;
   padding: .3rem .8rem .3rem .8rem;
   margin: .5rem;
   border-radius: 10px;
-  
 }
 
 .categoryflair {
@@ -104,13 +103,53 @@ font-size: 1.1rem;
 }
 
 .comment {
-  background-color: white;
+  background-color:#F0F0F0;
   padding: .2rem 1rem;
   border-radius: 10px;
   margin: 1.5rem 0 0 0;
+  text-align: left;
 }
 
 .sectioncontainer {
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
+  margin: 2rem;
 }
+
+.commentcontainer {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.commentcontainer {
+  width: 450px;
+  margin: 0 1rem 0 1rem;
+}
+
+.commentform {
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 10px;
+  padding: 0 2rem;
+  background-color: #F2F5F3;
+  width: 350px;
+}
+
+.commentform textarea {
+  height: 100px; 
+}
+
+.commentbutton {
+    font-size: 1rem;
+    align-self: center;
+    padding: .3rem .8rem .3rem .8rem;
+    margin: .5rem;
+    border-radius: 10px;
+  }
+
+  .commentalign {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+  }
