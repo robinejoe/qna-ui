@@ -4,9 +4,19 @@ import Moment from 'react-moment';
 function QuestionDetails(props) {
     const [ editQuestion, setEditQuestion ] = useState(false);
     const [ question, setQuestion ] = useState(props.question);
+    const onDeleteParentCallback = props.onDelete
 
     function toggleEdit(event) {
         setEditQuestion(true);
+    }
+
+    const deleteQuestion = async (event) => {
+        const id = question._id;
+        await fetch ('http://localhost:3001/api/questions/' + id, {
+            method: 'DELETE'
+        })
+        .then((response) => setQuestion())
+        onDeleteParentCallback(event)
     }
 
     const handleQuestionEdit = async (event) => {
@@ -51,7 +61,7 @@ function QuestionDetails(props) {
                     <div>
                         <h1>{question.title}</h1>
                         <h3 className="categoryflair">{question.category.name}</h3>
-                        <p>Posted by: <em>{question.user}</em> on <Moment format="MM/DD/YYYY \a\t h:mm:ss a">{question.createdAt}</Moment> <button onClick={toggleEdit}>Edit</button></p>
+                        <p>Posted by: <em>{question.user}</em> on <Moment format="MM/DD/YYYY \a\t h:mm:ss a">{question.createdAt}</Moment> <button onClick={toggleEdit}>Edit</button> <button onClick={deleteQuestion}>Delete</button></p>
                         <p>{question.description}</p>
                     </div>
                 }
