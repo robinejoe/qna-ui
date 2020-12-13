@@ -1,5 +1,4 @@
 import Header from './Header';
-import CategoryDropdown from './CategoryDropdown';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import QuestionDetails from './QuestionDetails';
@@ -57,7 +56,6 @@ function QuestionPage() {
     return (
         <div className="App">
             <Header />
-            <div className="selectdropdown"><CategoryDropdown /></div>
             {question ?
                 <div className="sectioncontainer">
                     <QuestionDetails question={question} onDelete={handleQuestionDeleteEvent} />
