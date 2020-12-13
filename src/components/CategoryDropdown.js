@@ -7,7 +7,10 @@ function CategoryDropdown(props) {
         const getCategories = async () => {
             fetch('http://localhost:3001/api/categories')
                 .then((response) => response.json())
-                .then((data) => setCategories(data.map(category => category)))
+                .then((data) => {
+                    const sortedCategoryNames = data.map(category => category.name).sort();
+                    setCategories(sortedCategoryNames);
+                })
         }
         getCategories()
     });
@@ -15,7 +18,7 @@ function CategoryDropdown(props) {
         <select name="category" onChange={onChange}>
             <option key='default' value=''>Select Category</option>
             {categories.map((category) => (
-                <option key={category.name} value={category.name}>{category.name}</option>
+                <option key={category} value={category}>{category}</option>
             ))}
         </select>
     );
