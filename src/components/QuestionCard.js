@@ -36,7 +36,7 @@ function QuestionCard(props) {
                 <h3 className="categoryflair">{question.category.name}</h3>
                 <p>Posted by: <em>{question.user}</em> on <Moment format="MM/DD/YYYY \a\t h:mm:ss a">{question.createdAt}</Moment></p>
                 <p>{question.description}</p>
-                <button className="answersbutton" onClick={toggleAnswers}>Answers:</button>
+                <button className="answersbutton" onClick={toggleAnswers}>Answers</button>
                 <div style={{display: showAnswers ? 'block' : 'none'}}>
                     {comments.map(c => (
                     <div key={c._id} className="comment">
